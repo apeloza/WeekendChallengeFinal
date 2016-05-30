@@ -1,3 +1,11 @@
+
+header {
+  background-image: url(../images/safaribg.jpg);
+  background-position: bottom;
+}
+.heading {
+  color: white;
+}
 .flex {
 display: flex;
 align-items:center;
@@ -14,8 +22,26 @@ height: 150px;
   width: 200px;
 }
 
-.favimage {
+.favimage, .petimage {
   max-width:100%;
-  max-height: 200px;
+  max-height: 180px;
   border: 2px solid black;
+}
+
+.favorite {
+width: 100px;
+height: 100px;
+}
+
+.infocontainer {
+  width: 900px;
+  height: 200px;
+}
+
+.bio {
+  margin: 0 50px;
+}
+
+.petcontainer button {
+  display: inline;
 }

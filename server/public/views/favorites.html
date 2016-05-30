@@ -13,16 +13,16 @@
 </head>
 
 <body ng-app="petApp">
-    <header ng-include="'/views/templates/header.html'" class="jumbotron text-center heading"></header>
+  <div ng-controller="PetController">
+    <header ng-include="'/views/templates/header.html'" ng-click="playMusic()" class="jumbotron text-center heading"></header>
     <div ng-include="'/views/templates/nav.html'"></div>
-    <div ng-controller="PetController">
         <div class="container">
-            <div ng-repeat="pet in favArray">
+            <div ng-repeat="pet in favorites">
                 <div class="flex">
                     <div class="namecontainer" >
                         <h3>{{pet.name}}</h3>
                         <h4>ID: {{pet.id}}</h4>
-                        <img class="favimage" ng-src={{pet.image}} />
+                        <img class="favimage" ng-src="{{pet.image}}" />
                     </div>
 
                     <div class="flexone">

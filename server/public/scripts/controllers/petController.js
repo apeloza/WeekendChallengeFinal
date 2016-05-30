@@ -32,13 +32,14 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
       value: 'bird'
     }
   ];
+
+  //empty variables are initialized
     $scope.selected = '';
     $scope.favCount = 0;
     $scope.favorites = [];
     $scope.animal = {};
     $scope.animalName = '';
     $scope.favAnimal = {};
-    $scope.favArray = [];
     getFav();
 
     $scope.getRandomPet = function(pet) {
@@ -58,14 +59,13 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
                 $scope.animal = response.data.petfinder.pet;
                 $scope.animalName = response.data.petfinder.pet.name.$t;
                 $scope.breed = $scope.animal.animal.$t;
-                $scope.getBreeds();
             }
         );
     };
 
     $scope.addFav = function() {
         for (var i = 0; i < $scope.favorites.length; i++) {
-            if ($scope.animal.id.$t == $scope.favorites[i].id.$t) {
+            if ($scope.animal.id.$t == $scope.favorites[i].id.$t || $scope.animal.id.$t == $scope.favorites[i].id) {
                 return;
             }
         }
@@ -88,10 +88,16 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
             //$scope.favArray.push(pet);
           //});
 
-          $scope.favArray = response.data;
+          $scope.favorites = response.data;
           console.log('GET /favorites ', response.data);
-          $scope.favCount = $scope.favArray.length;
+          $scope.favCount = $scope.favorites.length;
 
         });
     }
+
+    //Na na na na na na na na katamari damacy
+    $scope.playMusic = function () {
+      var katamari = new Audio('../audio/savannah.mp3');
+      katamari.play();
+    };
 }]);

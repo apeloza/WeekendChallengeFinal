@@ -11,26 +11,25 @@
     <link rel="stylesheet" href="../styles/main.css" />
 </head>
 <body ng-app="petApp">
-  <header ng-include="'/views/templates/header.html'" class="jumbotron text-center heading"></header>
-  <div ng-include="'/views/templates/nav.html'"></div>
   <div ng-controller="PetController">
+  <header ng-include="'/views/templates/header.html'" ng-click="playMusic()" class="jumbotron text-center heading"></header>
+  <div ng-include="'/views/templates/nav.html'"></div>
     <div class="container">
 
     <h4 class="favcount">Favorites: {{favCount}}</h4>
 
     <select ng-options="pet as pet.label for pet in pets track by pet.id" ng-model="selected">
     </select>
+    <button  ng-show="selected" class="btn btn-success randpet" ng-click="getRandomPet(selected)">Get Random Pet</button>
+
   <main ng-show="selected" class="randompet">
     <div class="petcontainer">
-        <h2 ng-click="getRandomPet(selected)">Get Random Pet</h2>
         <h3 class = "name">{{animal.name.$t}}</h3>
-      <p class = "bio">{{animal.description.$t}}</p>
-      <div class="imagecontainer">
-      <img class="petimage" ng-src={{animal.media.photos.photo[3].$t}} />
+      <div ng-show="animal.name.$t" class="infocontainer flex">
+      <img class="petimage" ng-src="{{animal.media.photos.photo[3].$t}}" />
+      <p class = "bio flexone">{{animal.description.$t}}</p>
+        <button ng-click="addFav()" class="favorite btn btn-default">Favorite?</button>
     </div>
-    </div>
-    <div ng-show="animal.name.$t">
-      <button ng-click="addFav()" class="favorite">Favorite?</button>
     </div>
   </main>
 </div>
