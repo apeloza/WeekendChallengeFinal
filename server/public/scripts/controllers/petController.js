@@ -42,11 +42,14 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.favAnimal = {};
     getFav();
 
+//Gets a random pet using the API.
     $scope.getRandomPet = function(pet) {
         console.log(pet);
         console.log(pet.label);
         var query = 'pet.getRandom';
         query += '?key=' + key;
+
+        //Uses the currently selected pet from the dropdown
         query += '&animal=' + pet.value;
         query += '&output=basic';
         query += '&format=json';
@@ -63,15 +66,22 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
         );
     };
 
+//Adds a favorited pet when the favorite? button is clicked.
     $scope.addFav = function() {
+
+      //Checks to make sure that the current pet isn't already a favorite, either in the database or from your previous click.
         for (var i = 0; i < $scope.favorites.length; i++) {
             if ($scope.animal.id.$t == $scope.favorites[i].id.$t || $scope.animal.id.$t == $scope.favorites[i].id) {
                 return;
             }
         }
+
+        //favCount is incremented and then the favorited animal is added to an array (for checking purposes above).
         $scope.favCount++;
         $scope.favorites.push($scope.animal);
         console.log($scope.favorites);
+
+        //favAnimal is prepared to be sent to the server, only filled with relevant information.
         $scope.favAnimal.id = $scope.animal.id.$t;
         $scope.favAnimal.image = $scope.animal.media.photos.photo[3].$t;
         $scope.favAnimal.name = $scope.animal.name.$t;
@@ -81,13 +91,11 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
           console.log("Successfully posted");
         });
     };
+
+    //All favorites are fetched from the database.
     function getFav () {
       $http.get('/favorites/db')
         .then(function (response) {
-          //response.data.forEach(function (pet) {
-            //$scope.favArray.push(pet);
-          //});
-
           $scope.favorites = response.data;
           console.log('GET /favorites ', response.data);
           $scope.favCount = $scope.favorites.length;
