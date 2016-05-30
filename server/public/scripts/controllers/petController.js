@@ -63,24 +63,6 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
         );
     };
 
-    $scope.getBreeds = function() {
-        var query = 'breed.list';
-        query += '?key=' + key;
-        query += '&animal=' + $scope.breed.toLowerCase();
-        query += '&format=json';
-
-        var request = baseURL + encodeURI(query) + '&callback=JSON_CALLBACK';
-
-        console.log(request);
-
-        $http.jsonp(request).then(
-            function(response) {
-                console.log('breeds: ', response.data);
-                $scope.breeds = response.data.petfinder.breeds.breed;
-            }
-        );
-    };
-
     $scope.addFav = function() {
         for (var i = 0; i < $scope.favorites.length; i++) {
             if ($scope.animal.id.$t == $scope.favorites[i].id.$t) {
