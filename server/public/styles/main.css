@@ -1,0 +1,21 @@
+.flex {
+display: flex;
+align-items:center;
+margin-bottom: 100px;
+height: 150px;
+}
+
+.flexone {
+  flex: 1;
+  margin: 10px;
+}
+
+.namecontainer {
+  width: 200px;
+}
+
+.favimage {
+  max-width:100%;
+  max-height: 200px;
+  border: 2px solid black;
+}

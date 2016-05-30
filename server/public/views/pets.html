@@ -1,0 +1,8 @@
+<div class="petcontainer">
+    <h2 ng-click="getRandomPet()">Get Random Pet</h2>
+    <h3 class = "name">{{animal.name.$t}}</h3>
+  <p class = "bio">{{animal.description.$t}}</p>
+  <div class="imagecontainer">
+  <img class="petimage" ng-src={{animal.media.photos.photo[3].$t}} />
+</div>
+</div>
