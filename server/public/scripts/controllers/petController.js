@@ -72,6 +72,7 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
       //Checks to make sure that the current pet isn't already a favorite, either in the database or from your previous click.
         for (var i = 0; i < $scope.favorites.length; i++) {
             if ($scope.animal.id.$t == $scope.favorites[i].id.$t || $scope.animal.id.$t == $scope.favorites[i].id) {
+              alert("You have already favorited this animal!");
                 return;
             }
         }
