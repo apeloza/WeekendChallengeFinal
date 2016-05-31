@@ -26,14 +26,13 @@
     <div class="petcontainer">
         <h3 class = "name">{{animal.name.$t}}</h3>
       <div ng-show="animal.name.$t" class="infocontainer flex">
-      <img class="petimage" ng-src="{{animal.media.photos.photo[3].$t}}" />
+      <img class="petimage" ng-if="animal.media.photos.photo[3].$t" ng-src="{{animal.media.photos.photo[3].$t}}" />
       <p class = "bio flexone">{{animal.description.$t}}</p>
         <button ng-click="addFav()" class="favorite btn btn-default">Favorite?</button>
     </div>
     </div>
   </main>
 </div>
-  <footer ng-include="'/views/templates/footer.html'" class="footing"></footer>
 </div>
 </body>
 </html>
