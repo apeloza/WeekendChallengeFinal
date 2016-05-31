@@ -9,9 +9,13 @@ var PetSchema = new Schema({
   animal: {type: String, required: true}
 });
 PetSchema.pre('save', function (next) {
-  var truncated = this.description.substring(0,300);
+  if (this.description) {
+  var truncated = this.description.substring(0,100);
   truncated+= ' ...';
   this.description = truncated;
+} else {
+  this.description = "NO DESCRIPTION PROVIDED";
+}
   next();
 });
 

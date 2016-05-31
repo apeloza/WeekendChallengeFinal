@@ -19,7 +19,7 @@
         <div class="container">
           <h4 class="favcount">Favorites: {{favCount}}</h4>
             <div ng-repeat="pet in favorites | orderBy: 'animal'">
-                <div class="flex">
+                <div class="flex favcontainer">
                     <div class="namecontainer" >
                         <h4>{{pet.name}}</h4>
                         <h5>ID: {{pet.id}}</h5>

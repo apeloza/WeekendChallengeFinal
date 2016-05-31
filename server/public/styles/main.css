@@ -12,6 +12,9 @@ align-items:center;
 margin-bottom: 100px;
 height: 150px;
 }
+.favcontainer {
+  height: 150px;
+}
 .favcount {
   margin-bottom: 20px;
 }
@@ -39,10 +42,7 @@ width: 100px;
 height: 100px;
 }
 
-.infocontainer {
-  width: 900px;
-  height: 200px;
-}
+
 
 .bio {
   margin: 0 50px;
@@ -56,4 +56,8 @@ height: 100px;
 .namecontainer h4 {
   margin-top: 30px;
   padding-top: 30px;
+}
+
+.petcontainer h3 {
+  padding: 20px;
 }
