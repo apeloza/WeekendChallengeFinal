@@ -105,6 +105,14 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
 
         });
     }
+    $scope.deletePet = function (id) {
+      $http.delete('/favorites/' + id)
+        .then(function (response) {
+          console.log('DELETE /favorites ', id);
+          getFav();
+        });
+    };
+
 
     //Na na na na na na na na katamari damacy
     $scope.playMusic = function () {

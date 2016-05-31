@@ -21,9 +21,10 @@
             <div ng-repeat="pet in favorites | orderBy: 'animal'">
                 <div class="flex">
                     <div class="namecontainer" >
-                        <h3>{{pet.name}}</h3>
-                        <h4>ID: {{pet.id}}</h4>
+                        <h4>{{pet.name}}</h4>
+                        <h5>ID: {{pet.id}}</h5>
                         <img class="favimage" ng-src="{{pet.image}}" />
+                        <button class="delete btn btn-warning" ng-click="deletePet(pet._id)">Delete Pet?</button>
                     </div>
 
                     <div class="flexone">

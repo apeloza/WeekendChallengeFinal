@@ -25,6 +25,7 @@ height: 150px;
   width: 200px;
   padding: 0 30px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .favimage, .petimage {
@@ -46,7 +47,13 @@ height: 100px;
 .bio {
   margin: 0 50px;
 }
-
+.delete {
+  width: 100%;
+}
 .flexone p {
   margin-top: 50px;
+}
+.namecontainer h4 {
+  margin-top: 30px;
+  padding-top: 30px;
 }
