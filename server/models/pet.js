@@ -5,7 +5,8 @@ var PetSchema = new Schema({
   id: { type: String, required: true },
   image: { type: String },
   name: {type: String, required: true},
-  description: {type: String}
+  description: {type: String},
+  animal: {type: String, required: true}
 });
 PetSchema.pre('save', function (next) {
   var truncated = this.description.substring(0,300);

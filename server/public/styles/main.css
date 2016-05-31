@@ -17,11 +17,14 @@ height: 150px;
 }
 .flexone {
   flex: 1;
-  margin: 10px;
+  margin: auto;
+  text-align: center;
 }
 
 .namecontainer {
   width: 200px;
+  padding: 0 30px;
+  margin-top: 20px;
 }
 
 .favimage, .petimage {
@@ -44,6 +47,6 @@ height: 100px;
   margin: 0 50px;
 }
 
-.petcontainer button {
-  display: inline;
+.flexone p {
+  margin-top: 50px;
 }

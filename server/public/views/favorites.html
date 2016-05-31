@@ -18,7 +18,7 @@
     <div ng-include="'/views/templates/nav.html'"></div>
         <div class="container">
           <h4 class="favcount">Favorites: {{favCount}}</h4>
-            <div ng-repeat="pet in favorites">
+            <div ng-repeat="pet in favorites | orderBy: 'animal'">
                 <div class="flex">
                     <div class="namecontainer" >
                         <h3>{{pet.name}}</h3>

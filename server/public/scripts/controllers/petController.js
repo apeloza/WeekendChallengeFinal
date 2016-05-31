@@ -8,28 +8,28 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
 //Variables for the dropdown menu
     $scope.pets = [{
         id: 1,
-        label: 'Dogs',
-        value: 'dog'
+        label: 'Birds',
+        value: 'bird'
     }, {
         id: 2,
         label: 'Cats',
         value: 'cat'
     }, {
       id: 3,
-      label: 'Pigs',
-      value: 'pig'
+      label: 'Dogs',
+      value: 'dog'
     }, {
       id: 4,
-      label: 'Small and Furry',
-      value: 'smallfurry'
+      label: 'Pigs',
+      value: 'pig'
     }, {
       id: 5,
       label: 'Reptile',
       value: 'reptile'
     }, {
       id: 6,
-      label: 'Bird',
-      value: 'bird'
+      label: 'Small and Furry',
+      value: 'smallfurry'
     }
   ];
 
@@ -86,6 +86,8 @@ app.controller('PetController', ['$scope', '$http', function($scope, $http) {
         $scope.favAnimal.image = $scope.animal.media.photos.photo[3].$t;
         $scope.favAnimal.name = $scope.animal.name.$t;
         $scope.favAnimal.description = $scope.animal.description.$t;
+        $scope.favAnimal.animal = $scope.animal.animal.$t;
+        console.log($scope.favAnimal);
         $http.post('/favorites', $scope.favAnimal)
         .then(function (){
           console.log("Successfully posted");
