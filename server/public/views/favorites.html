@@ -17,6 +17,7 @@
     <header ng-include="'/views/templates/header.html'" ng-click="playMusic()" class="jumbotron text-center heading"></header>
     <div ng-include="'/views/templates/nav.html'"></div>
         <div class="container">
+          <h4 class="favcount">Favorites: {{favCount}}</h4>
             <div ng-repeat="pet in favorites">
                 <div class="flex">
                     <div class="namecontainer" >

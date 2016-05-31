@@ -12,7 +12,9 @@ align-items:center;
 margin-bottom: 100px;
 height: 150px;
 }
-
+.favcount {
+  margin-bottom: 20px;
+}
 .flexone {
   flex: 1;
   margin: 10px;
